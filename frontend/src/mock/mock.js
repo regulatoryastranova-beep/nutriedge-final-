@@ -15,7 +15,7 @@ export const companyInfo = {
     linkedin: 'https://www.linkedin.com/in/nikunj-patel-aa7b5a217/?skipRedirect=true',
     instagram: '#'
   },
-  cataloguePdf: '/assets/NutriEdge-Catalogue.pdf'
+  cataloguePdf: '/assets/NutriEdge-Catalogue.pdf?v=20260724b'
 };
 
 export const navigationLinks = [

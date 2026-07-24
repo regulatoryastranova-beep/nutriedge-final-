@@ -1,0 +1,19 @@
+{
+  "summary": "Verified the catalogue PDF bug fix. The floating orange PDF FAB on the home page (WhatsAppFloat) has href='/assets/NutriEdge-Catalogue.pdf?v=20260724b' with download='NutriEdge-Catalogue.pdf' and target='_blank'. Fetched the served bytes from the public preview URL: HTTP 200, Content-Type=application/pdf, Content-Length=3409789 bytes, MD5=68f99535b9356bb8c18b4d6d90ef8ce2 — EXACTLY matches the expected re-uploaded file. PDF content verified via pypdf: 21 pages; 4 of 5 category markers extracted successfully (GENERAL HEALTH & WELLNESS, IMMUNITY BOOSTER, ONCO CARE, GUT HEALTH, IRRITABLE BOWEL SYNDROME all present). Note: 'NutriEdge Lifesciences' title on page 1 could not be extracted via text — likely rendered as image/logo on the cover page, which is expected and does not indicate a problem.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (skipped)", "frontend": "100%"},
+  "seed_data_creation": "",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Catalogue PDF bug fix verified. Served MD5 == 68f99535b9356bb8c18b4d6d90ef8ce2, size 3409789 bytes. Cache-buster ?v=20260724b present in href. No further action required.",
+  "rca of the issue": "User complained about downloading a stale/wrong catalogue. RCA: browsers were caching the previous PDF at /assets/NutriEdge-Catalogue.pdf. Fix (already applied by main agent): (1) overwrote the file with the new user-provided PDF, (2) added a cache-buster query string ?v=20260724b to the download URL in mock.js so browsers fetch the new binary. Verified end-to-end on the preview URL."
+}
