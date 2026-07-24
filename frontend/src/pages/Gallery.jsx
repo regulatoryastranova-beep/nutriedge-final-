@@ -48,7 +48,7 @@ export default function Gallery() {
                 style={{ animationDelay: `${i * 40}ms` }}
               >
                 <div className="aspect-square overflow-hidden bg-white flex items-center justify-center p-3">
-                  <img src={img.src} alt={img.caption} className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" />
+                  <img src={img.src} alt={img.caption} loading="lazy" className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-3 text-center">
                   <p className="text-sm font-semibold text-[#0a2a66] group-hover:text-[#f26522] transition-colors">{img.caption}</p>

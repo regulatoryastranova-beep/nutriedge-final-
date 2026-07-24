@@ -1,8 +1,5 @@
-import { Award, ShieldCheck, BadgeCheck, Sparkles, Globe2, Leaf, HeartPulse, Scroll, FileBadge, FlaskConical, CheckCircle2 } from 'lucide-react';
 import { certifications } from '../mock/mock';
 import useReveal from '../hooks/useReveal';
-
-const iconRotation = [Award, ShieldCheck, BadgeCheck, Sparkles, Globe2, Leaf, HeartPulse, Scroll, FileBadge, FlaskConical, CheckCircle2];
 
 export default function Certifications() {
   const ref = useReveal();
@@ -29,21 +26,24 @@ export default function Certifications() {
         <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
         <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
-        <div className="flex gap-5 marquee-track" style={{ width: 'max-content' }}>
-          {items.map((cert, i) => {
-            const Icon = iconRotation[i % iconRotation.length];
-            return (
-              <div
-                key={`${cert.code}-${i}`}
-                className="shrink-0 w-48 h-48 rounded-xl bg-[#f7f4ec] border-2 border-transparent hover:border-[#0f3d91]/30 flex flex-col items-center justify-center p-5 group transition-colors"
-              >
-                <div className="w-16 h-16 rounded-full bg-white shadow-sm flex items-center justify-center mb-3 group-hover:bg-[#0f3d91] transition-colors">
-                  <Icon className="w-8 h-8 text-[#0f3d91] group-hover:text-white transition-colors" />
-                </div>
-                <p className="text-center text-sm font-bold text-[#0a2a66] leading-tight">{cert.name}</p>
+        <div className="flex gap-5 marquee-track" style={{ width: 'max-content' }} data-testid="certifications-marquee">
+          {items.map((cert, i) => (
+            <div
+              key={`${cert.code}-${i}`}
+              data-testid={`certification-card-${cert.code}`}
+              className="shrink-0 w-52 h-52 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 flex flex-col items-center justify-center p-5 group transition-all duration-300"
+            >
+              <div className="w-24 h-24 rounded-xl bg-[#f7f4ec] flex items-center justify-center mb-3 overflow-hidden group-hover:scale-110 transition-transform duration-500">
+                <img
+                  src={cert.logo}
+                  alt={cert.name}
+                  loading="lazy"
+                  className="w-20 h-20 object-contain"
+                />
               </div>
-            );
-          })}
+              <p className="text-center text-sm font-bold text-[#0a2a66] leading-tight group-hover:text-[#f26522] transition-colors">{cert.name}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

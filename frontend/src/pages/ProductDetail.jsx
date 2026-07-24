@@ -113,20 +113,54 @@ export default function ProductDetail() {
         </div>
       </section>
 
-      <section className="py-16 bg-[#f7f4ec]">
-        <div className="max-w-7xl mx-auto px-6">
-          <h3 className="font-display text-2xl md:text-3xl font-semibold text-[#0a2a66] mb-8 text-center">Explore Other Categories</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {productCatalogue.filter((c) => c.id !== categoryId).slice(0, 6).map((c) => (
+      <section className="py-16 bg-[#f7f4ec] overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 mb-10">
+          <div className="text-center">
+            <p className="section-eyebrow">DISCOVER MORE</p>
+            <h3 className="font-display text-2xl md:text-3xl font-semibold ne-gradient-text-blue mt-2">Explore Other Categories</h3>
+            <div className="divider-line" />
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Browse our complete range of {productCatalogue.length - 1} additional therapeutic categories — hover on the strip to pause.
+            </p>
+          </div>
+        </div>
+
+        {/* Auto-scrolling stack of ALL other categories */}
+        <div className="relative">
+          <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#f7f4ec] to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#f7f4ec] to-transparent z-10 pointer-events-none" />
+
+          <div
+            className="flex gap-5 marquee-track"
+            style={{ width: 'max-content' }}
+            data-testid="explore-other-categories-stack"
+          >
+            {[...productCatalogue.filter((c) => c.id !== categoryId), ...productCatalogue.filter((c) => c.id !== categoryId)].map((c, i) => (
               <Link
                 to={`/products/${c.id}`}
-                key={c.id}
-                className="group bg-white rounded-lg overflow-hidden hover-lift border border-gray-100"
+                key={`${c.id}-${i}`}
+                data-testid={`other-category-card-${c.id}-${i}`}
+                className="group shrink-0 w-56 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
               >
-                <div className="aspect-square overflow-hidden">
-                  <img src={c.image} alt={c.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                <div className="aspect-square overflow-hidden bg-[#f7f4ec] relative">
+                  <img
+                    src={c.image}
+                    alt={c.name}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a2a66]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-3 left-3 right-3 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                    <span className="inline-flex items-center gap-1 text-[10px] font-bold text-white bg-[#f26522] px-2.5 py-1 rounded-full">
+                      EXPLORE <ArrowRight className="w-3 h-3" />
+                    </span>
+                  </div>
                 </div>
-                <p className="text-center text-sm font-semibold text-[#0a2a66] p-3 group-hover:text-[#f26522] transition-colors">{c.name}</p>
+                <div className="p-4">
+                  <p className="text-xs font-semibold text-[#f26522] uppercase tracking-wider mb-1">{c.tagline || 'Category'}</p>
+                  <p className="text-sm font-bold text-[#0a2a66] group-hover:text-[#f26522] transition-colors leading-tight">{c.name}</p>
+                  <p className="text-xs text-gray-500 mt-1">{c.products?.length || 0} products</p>
+                </div>
               </Link>
             ))}
           </div>
