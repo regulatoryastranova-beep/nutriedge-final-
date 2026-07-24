@@ -2,10 +2,8 @@ import { useState, useMemo } from 'react';
 import PageHero from '../components/PageHero';
 import { galleryImages } from '../mock/mock';
 import { X, Search } from 'lucide-react';
-import useReveal from '../hooks/useReveal';
 
 export default function Gallery() {
-  const ref = useReveal();
   const [selected, setSelected] = useState(null);
   const [query, setQuery] = useState('');
 
@@ -19,7 +17,7 @@ export default function Gallery() {
     <main>
       <PageHero title="Gallery" subtitle="Explore our complete product range, packaging solutions and manufacturing capabilities in pictures." />
 
-      <section ref={ref} className="reveal py-16 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-between mb-10 flex-wrap gap-4">
             <div>
@@ -44,8 +42,8 @@ export default function Gallery() {
               <button
                 key={img.src}
                 onClick={() => setSelected(img)}
-                className="reveal-item group bg-[#f7f4ec] rounded-xl overflow-hidden border border-gray-100 hover-lift text-left"
-                style={{ animationDelay: `${i * 40}ms` }}
+                data-testid={`gallery-item-${i}`}
+                className="group bg-[#f7f4ec] rounded-xl overflow-hidden border border-gray-100 hover-lift text-left"
               >
                 <div className="aspect-square overflow-hidden bg-white flex items-center justify-center p-3">
                   <img src={img.src} alt={img.caption} loading="lazy" className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" />

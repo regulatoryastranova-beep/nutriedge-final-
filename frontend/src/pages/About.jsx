@@ -5,6 +5,7 @@ import Certifications from '../components/Certifications';
 import Expertise from '../components/Expertise';
 import GlobalPresence from '../components/GlobalPresence';
 import WhyNutriEdge from '../components/WhyNutriEdge';
+import Team from '../components/Team';
 import { Target, Eye, Sparkles, Calendar, Users, Award, Factory, CheckCircle2 } from 'lucide-react';
 import { companyInfo, milestones, infrastructure } from '../mock/mock';
 import useReveal from '../hooks/useReveal';
@@ -149,6 +150,7 @@ export default function About() {
 
       <Expertise />
       <DirectorsWord />
+      <Team />
       <Certifications />
     </main>
   );

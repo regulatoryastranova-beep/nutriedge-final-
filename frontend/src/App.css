@@ -212,11 +212,17 @@ html { scroll-behavior: smooth; }
 
 /* Marquee */
 @keyframes marqueeScroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0%   { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
 }
 .marquee-track {
   animation: marqueeScroll 30s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 .marquee-track:hover {
   animation-play-state: paused;
@@ -224,15 +230,25 @@ html { scroll-behavior: smooth; }
 
 /* Slow spin */
 @keyframes slowSpin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from { transform: rotate3d(0, 0, 1, 0deg); }
+  to   { transform: rotate3d(0, 0, 1, 360deg); }
 }
 @keyframes reverseSpin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(-360deg); }
+  from { transform: rotate3d(0, 0, 1, 0deg); }
+  to   { transform: rotate3d(0, 0, 1, -360deg); }
 }
-.animate-slow-spin { animation: slowSpin 30s linear infinite; }
-.animate-reverse-spin { animation: reverseSpin 45s linear infinite; }
+.animate-slow-spin {
+  animation: slowSpin 30s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+.animate-reverse-spin {
+  animation: reverseSpin 45s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
 
 /* Process section animations */
 @keyframes processPulseRing {
@@ -242,13 +258,65 @@ html { scroll-behavior: smooth; }
 }
 .process-pulse-ring {
   animation: processPulseRing 2.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  will-change: transform, opacity;
 }
 @keyframes floatY {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-6px); }
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50%      { transform: translate3d(0, -6px, 0); }
 }
 .process-happy-badge {
   animation: floatY 3.2s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Animated gradient connector line */
+.process-connector-line {
+  background: linear-gradient(90deg,
+    rgba(15,61,145,0.25) 0%,
+    rgba(15,61,145,0.5) 25%,
+    rgba(242,101,34,0.55) 50%,
+    rgba(15,61,145,0.5) 75%,
+    rgba(15,61,145,0.25) 100%);
+  background-size: 200% 100%;
+  animation: connectorShift 6s linear infinite;
+  will-change: background-position;
+}
+@keyframes connectorShift {
+  0%   { background-position: 0% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Traveling glow dot along the process line */
+@keyframes travelDot {
+  0%   { transform: translate3d(0, 0, 0); opacity: 0; }
+  8%   { opacity: 1; }
+  92%  { opacity: 1; }
+  100% { transform: translate3d(calc(100vw - 200px), 0, 0); opacity: 0; }
+}
+.process-travel-dot {
+  animation: travelDot 8s linear infinite;
+  will-change: transform, opacity;
+}
+
+/* Conic gradient spin behind hovered step */
+@keyframes conicSpin {
+  from { transform: rotate3d(0, 0, 1, 0deg); }
+  to   { transform: rotate3d(0, 0, 1, 360deg); }
+}
+.process-conic-spin {
+  animation: conicSpin 4s linear infinite;
+  filter: blur(6px);
+  will-change: transform;
+}
+
+/* Sparkle twinkle */
+@keyframes sparkleTwinkle {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.4; }
+  50%      { transform: scale(1.2) rotate(15deg); opacity: 0.9; }
+}
+.process-sparkle {
+  animation: sparkleTwinkle 3s ease-in-out infinite;
+  will-change: transform, opacity;
 }
 
 /* Hide Google Translate default banner & artifacts */
