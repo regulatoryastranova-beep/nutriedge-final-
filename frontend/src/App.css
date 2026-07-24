@@ -1,34 +1,251 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+.App {
+  font-family: 'Poppins', sans-serif;
+  color: #1a1a1a;
+  background: #ffffff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+.font-display {
+  font-family: 'Playfair Display', serif;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+/* NutriEdge Brand Colors */
+:root {
+  --ne-blue: #0f3d91;
+  --ne-blue-dark: #0a2a66;
+  --ne-blue-light: #2a6fd6;
+  --ne-orange: #f26522;
+  --ne-orange-light: #ff8c47;
+  --ne-cream: #f7f4ec;
+  --ne-gray: #6b7280;
 }
 
-.App-link {
-    color: #61dafb;
+.ne-gradient-blue {
+  background: linear-gradient(135deg, #0f3d91 0%, #1e5bb8 100%);
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.ne-gradient-blue-dark {
+  background: linear-gradient(135deg, #0a2a66 0%, #0f3d91 100%);
 }
+
+.ne-gradient-text {
+  background: linear-gradient(135deg, #0f3d91 0%, #f26522 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ne-gradient-text-blue {
+  background: linear-gradient(90deg, #0a2a66 0%, #2a6fd6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Reveal Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+.animate-fade-in { animation: fadeIn 1s ease-out forwards; }
+.animate-slide-left { animation: slideInLeft 0.8s ease-out forwards; }
+.animate-slide-right { animation: slideInRight 0.8s ease-out forwards; }
+.animate-float { animation: float 4s ease-in-out infinite; }
+
+/* Scroll-in reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Product card hover */
+.product-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -12px rgba(15, 61, 145, 0.25);
+}
+
+/* Buttons */
+.btn-primary {
+  background: #0f3d91;
+  color: #fff;
+  padding: 12px 28px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  border-radius: 4px;
+}
+.btn-primary:hover {
+  background: #f26522;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -6px rgba(242, 101, 34, 0.4);
+}
+
+.btn-outline {
+  border: 2px solid #0f3d91;
+  color: #0f3d91;
+  padding: 10px 26px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: background 0.3s ease, color 0.3s ease;
+  border-radius: 4px;
+}
+.btn-outline:hover {
+  background: #0f3d91;
+  color: #fff;
+}
+
+/* Underline divider */
+.divider-line {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #0f3d91 0%, #f26522 100%);
+  margin: 16px auto 24px;
+  border-radius: 2px;
+}
+
+/* Section headings */
+.section-eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #f26522;
+  text-transform: uppercase;
+}
+
+/* Process timeline */
+.process-line {
+  border-top: 2px dashed #0f3d91;
+}
+
+/* Custom cursor on cards */
+.hover-lift {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+/* Subtle grain */
+.grain-bg {
+  background-color: #f7f4ec;
+  background-image: radial-gradient(circle at 1px 1px, rgba(15, 61, 145, 0.05) 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+html { scroll-behavior: smooth; }
+
+/* Globe rotation */
+@keyframes globeSpin {
+  from { background-position: 0 0; }
+  to { background-position: 200% 0; }
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Stagger reveal */
+@keyframes revealItem {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.reveal-item { animation: revealItem 0.8s ease-out both; }
+
+/* Product card enhanced hover */
+.product-tilt {
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s ease;
+}
+.product-tilt:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 30px 60px -15px rgba(15, 61, 145, 0.35);
+}
+.product-tilt .product-img {
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.product-tilt:hover .product-img {
+  transform: scale(1.12);
+}
+
+/* Logo blends into background */
+.logo-blend {
+  mix-blend-mode: multiply;
+}
+
+/* Marquee */
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marqueeScroll 30s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Slow spin */
+@keyframes slowSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes reverseSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+.animate-slow-spin { animation: slowSpin 30s linear infinite; }
+.animate-reverse-spin { animation: reverseSpin 45s linear infinite; }
+
+/* Hide Google Translate default banner & artifacts */
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+.skiptranslate iframe {
+  display: none !important;
+}
+body { top: 0 !important; }
+.goog-tooltip,
+.goog-tooltip:hover { display: none !important; }
+.goog-text-highlight {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+#google_translate_element { display: none; }
+
