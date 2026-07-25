@@ -37,7 +37,10 @@ export default function Certifications() {
                 <img
                   src={cert.logo}
                   alt={cert.name}
-                  loading="lazy"
+                  loading={i < 11 ? 'eager' : 'lazy'}
+                  decoding="async"
+                  width="80"
+                  height="80"
                   className="w-20 h-20 object-contain"
                 />
               </div>

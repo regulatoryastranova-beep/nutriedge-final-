@@ -40,17 +40,17 @@ export const packagingTypes = [
 ];
 
 export const certifications = [
-  { name: 'FSSAI', code: 'FSSAI', logo: '/assets/certifications/fssai.jpeg' },
-  { name: 'USFDA', code: 'USFDA', logo: '/assets/certifications/usfda.jpeg' },
-  { name: 'HACCP', code: 'HACCP', logo: '/assets/certifications/haccp.jpeg' },
-  { name: 'HALAL', code: 'HALAL', logo: '/assets/certifications/halal.jpeg' },
-  { name: 'KOSHER', code: 'KOSHER', logo: '/assets/certifications/kosher.jpeg' },
-  { name: 'WHO GMP', code: 'WHO-GMP', logo: '/assets/certifications/who-gmp.jpeg' },
-  { name: 'Certificate of Compliance', code: 'COC', logo: '/assets/certifications/coc.jpeg' },
-  { name: 'ISO 22000:2018', code: 'ISO 22000', logo: '/assets/certifications/iso-22000.jpeg' },
-  { name: 'ISO 9001:2015', code: 'ISO 9001', logo: '/assets/certifications/iso-9001.jpeg' },
-  { name: 'cGMP', code: 'cGMP', logo: '/assets/certifications/cgmp.jpeg' },
-  { name: 'NAFDAC', code: 'NAFDAC', logo: '/assets/certifications/nafdac.jpeg' }
+  { name: 'FSSAI', code: 'FSSAI', logo: '/assets/certifications/fssai.webp' },
+  { name: 'USFDA', code: 'USFDA', logo: '/assets/certifications/usfda.webp' },
+  { name: 'HACCP', code: 'HACCP', logo: '/assets/certifications/haccp.webp' },
+  { name: 'HALAL', code: 'HALAL', logo: '/assets/certifications/halal.webp' },
+  { name: 'KOSHER', code: 'KOSHER', logo: '/assets/certifications/kosher.webp' },
+  { name: 'WHO GMP', code: 'WHO-GMP', logo: '/assets/certifications/who-gmp.webp' },
+  { name: 'Certificate of Compliance', code: 'COC', logo: '/assets/certifications/coc.webp' },
+  { name: 'ISO 22000:2018', code: 'ISO 22000', logo: '/assets/certifications/iso-22000.webp' },
+  { name: 'ISO 9001:2015', code: 'ISO 9001', logo: '/assets/certifications/iso-9001.webp' },
+  { name: 'cGMP', code: 'cGMP', logo: '/assets/certifications/cgmp.webp' },
+  { name: 'NAFDAC', code: 'NAFDAC', logo: '/assets/certifications/nafdac.webp' }
 ];
 
 // 15+ export countries

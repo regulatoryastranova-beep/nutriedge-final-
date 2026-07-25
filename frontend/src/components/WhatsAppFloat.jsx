@@ -5,7 +5,7 @@ import { companyInfo } from '../mock/mock';
 export default function WhatsAppFloat() {
   const [visible, setVisible] = useState(false);
   const number = '917041783028';
-  const message = encodeURIComponent("Hello NutriEdge Lifesciences, I'm interested in your nutraceutical manufacturing services.");
+  const message = encodeURIComponent("Hello Nutriedge");
   const waHref = `https://wa.me/${number}?text=${message}`;
 
   useEffect(() => {
