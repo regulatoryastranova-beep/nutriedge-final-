@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import PageHero from '../components/PageHero';
 import { Phone, Mail, MapPin, Send, Building2, Loader2 } from 'lucide-react';
@@ -8,6 +8,10 @@ import { useToast } from '../hooks/use-toast';
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 export default function Contact() {
+  useEffect(() => {
+    document.title = 'Contact NutriEdge Lifesciences | Pharmaceutical Manufacturing India';
+  }, []);
+
   const { toast } = useToast();
   const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
   const [submitting, setSubmitting] = useState(false);
