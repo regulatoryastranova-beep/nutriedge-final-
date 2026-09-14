@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import PageHero from '../components/PageHero';
 import AboutSection from '../components/AboutSection';
 import DirectorsWord from '../components/DirectorsWord';
@@ -120,6 +121,10 @@ function Infrastructure() {
 }
 
 export default function About() {
+  useEffect(() => {
+    document.title = 'About NutriEdge Lifesciences | Pharmaceutical & Nutraceutical Company';
+  }, []);
+
   return (
     <main>
       <PageHero title="About Us" subtitle="Building a healthier tomorrow through science, integrity, and world-class nutraceutical manufacturing." />
