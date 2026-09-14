@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import PageHero from '../components/PageHero';
 import ProductRange from '../components/ProductRange';
 import Packaging from '../components/Packaging';
@@ -5,6 +6,9 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
 export default function Products() {
+   useEffect(() => {
+    document.title = 'Nutraceutical & Pharmaceutical Products | NutriEdge Lifesciences';
+  }, []);
   return (
     <main>
       <PageHero title="Our Products" subtitle="A comprehensive range of nutraceutical dosage forms manufactured with global quality standards." />
