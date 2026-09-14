@@ -214,7 +214,7 @@ export default function LanguageSwitcher({ dark = false }) {
   }, [query]);
 
   return (
-    <div ref={menuRef} className="relative">
+   <div ref={menuRef} className="relative notranslate">
       <div id="google_translate_element" style={{ position: 'absolute', top: -9999, left: -9999 }} />
       <button
         onClick={() => setOpen(!open)}
