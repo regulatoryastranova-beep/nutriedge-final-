@@ -16,7 +16,7 @@ import { Toaster } from './components/ui/toaster';
 
 function App() {
   useEffect(() => {
-    document.title = 'NutriEdge Lifesciences \u2013 Nutraceutical Manufacturing & Export';
+   document.title = 'NutriEdge Lifesciences | Nutraceutical & Pharmaceutical Manufacturing';
   }, []);
 
   return (
