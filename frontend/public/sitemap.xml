@@ -1,1 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <url>
+    <loc>https://www.nutriedgelife.com/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://www.nutriedgelife.com/about</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.nutriedgelife.com/products</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.nutriedgelife.com/gallery</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.nutriedgelife.com/rnd</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.nutriedgelife.com/contact</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.nutriedgelife.com/products/gummy-candy</loc>
+  </url>
+
+  <url>
+    <loc>https://www.nutriedgelife.com/products/effervescent-tablets</loc>
+  </url>
+
+  <url>
+    <loc>https://www.nutriedgelife.com/products/orthopedic</loc>
+  </url>
+
+  <url>
+    <loc>https://www.nutriedgelife.com/products/immunity-multivitamin</loc>
+  </url>
+
+  <url>
+    <loc>https://www.nutriedgelife.com/products/ophthal</loc>
+  </url>
+
+  <url>
+    <loc>https://www.nutriedgelife.com/products/gynec</loc>
+  </url>
+
+  <url>
+    <loc>https://www.nutriedgelife.com/products/derma</loc>
+  </url>
+
+  <url>
+    <loc>https://www.nutriedgelife.com/products/infertility-pcos</loc>
+  </url>
+
+  <url>
+    <loc>https://www.nutriedgelife.com/products/brain-neuro</loc>
+  </url>
+
+  <url>
+    <loc>https://www.nutriedgelife.com/products/uti</loc>
+  </url>
+
+  <url>
+    <loc>https://www.nutriedgelife.com/products/cardiac</loc>
+  </url>
+
+  <url>
+    <loc>https://www.nutriedgelife.com/products/liver</loc>
+  </url>
+
+  <url>
+    <loc>https://www.nutriedgelife.com/products/protein</loc>
+  </url>
+
+  <url>
+    <loc>https://www.nutriedgelife.com/products/pediatric</loc>
+  </url>
+
+  <url>
+    <loc>https://www.nutriedgelife.com/products/gastrointestinal</loc>
+  </url>
+
+</urlset>
