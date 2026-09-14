@@ -8,8 +8,16 @@ import { useToast } from '../hooks/use-toast';
 const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 export default function Contact() {
-  useEffect(() => {
+   useEffect(() => {
     document.title = 'Contact NutriEdge Lifesciences | Pharmaceutical Manufacturing India';
+
+    const description = document.querySelector('meta[name="description"]');
+    if (description) {
+      description.setAttribute(
+        'content',
+        'Contact NutriEdge Lifesciences for pharmaceutical and nutraceutical manufacturing, custom formulations, private label solutions and healthcare product inquiries from India.'
+      );
+    }
   }, []);
 
   const { toast } = useToast();
