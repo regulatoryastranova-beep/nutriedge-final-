@@ -7,8 +7,16 @@ import { ArrowRight } from 'lucide-react';
 
 export default function Products() {
    useEffect(() => {
-    document.title = 'Nutraceutical & Pharmaceutical Products | NutriEdge Lifesciences';
-  }, []);
+  document.title = 'Nutraceutical & Pharmaceutical Products | NutriEdge Lifesciences';
+
+  const description = document.querySelector('meta[name="description"]');
+  if (description) {
+    description.setAttribute(
+      'content',
+      'Explore NutriEdge Lifesciences pharmaceutical and nutraceutical products, including gummies, effervescent tablets, immunity supplements, orthopedic, gynecological, dermatology and other healthcare formulations.'
+    );
+  }
+}, []);
   return (
     <main>
       <PageHero title="Our Products" subtitle="A comprehensive range of nutraceutical dosage forms manufactured with global quality standards." />
