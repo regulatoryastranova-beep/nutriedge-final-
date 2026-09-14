@@ -178,22 +178,26 @@ export default function LanguageSwitcher({ dark = false }) {
     return () => document.removeEventListener('mousedown', onClick);
   }, []);
 
-  const selectLang = (code) => {
-    setCurrent(code);
-    setOpen(false);
-    // Trigger Google Translate by manipulating its cookie & the hidden select
-    const setCookie = (val) => {
-      document.cookie = `googtrans=${val};path=/`;
-      document.cookie = `googtrans=${val};domain=${window.location.hostname};path=/`;
-    };
-    if (code === 'en') {
-      setCookie('/en/en');
-    } else {
-      setCookie(`/en/${code}`);
-    }
-    // Reload to apply
-    window.location.reload();
+ const selectLang = (code) => {
+  setCurrent(code);
+  setOpen(false);
+
+  const setCookie = (val) => {
+    document.cookie = `googtrans=${val};path=/`;
+    document.cookie = `googtrans=${val};domain=${window.location.hostname};path=/`;
   };
+
+  if (code === 'en') {
+    // Clear Google Translate and return to the original English page
+    document.cookie = 'googtrans=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';
+    document.cookie = `googtrans=;expires=Thu, 01 Jan 1970 00:00:00 GMT;domain=${window.location.hostname};path=/`;
+    document.cookie = 'googtrans=;expires=Thu, 01 Jan 1970 00:00:00 GMT;domain=.nutriedgelife.com;path=/';
+  } else {
+    setCookie(`/en/${code}`);
+  }
+
+  window.location.reload();
+};
 
   // Detect current language from cookie on mount
   useEffect(() => {
