@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import PageHero from '../components/PageHero';
 import AboutSection from '../components/AboutSection';
 import DirectorsWord from '../components/DirectorsWord';
@@ -121,9 +122,35 @@ function Infrastructure() {
 }
 
 export default function About() {
+  const location = useLocation();
+
   useEffect(() => {
     document.title = 'About NutriEdge Lifesciences | Pharmaceutical & Nutraceutical Company';
   }, []);
+
+  useEffect(() => {
+    if (!location.hash) return;
+
+    const id = decodeURIComponent(location.hash.substring(1));
+
+    const timer = setTimeout(() => {
+      const element = document.getElementById(id);
+
+      if (element) {
+        const y =
+          element.getBoundingClientRect().top +
+          window.pageYOffset -
+          90;
+
+        window.scrollTo({
+          top: y,
+          behavior: 'smooth',
+        });
+      }
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [location.hash]);
 
   return (
     <main>
