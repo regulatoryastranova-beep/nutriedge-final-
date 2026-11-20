@@ -226,7 +226,7 @@ const newGalleryFiles = [
   'B-VITAL Vitamin Product Display.webp',
   'Calcifer-500 Calcium Tablets Product Photo.webp',
   'Calcifer-D Calcium Supplement Display.webp',
-  'Calciup D3 Calcium Supplement Display.webp',
+  'Calciup D₃ Calcium Supplement Display.webp',
   'Cal-mivera Calcium Tablets Packaging.webp',
   'Canadian Lactis Probiotic Capsules.webp',
   'Collagen Joint Supplement Packaging.webp',
