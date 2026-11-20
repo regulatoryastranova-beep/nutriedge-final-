@@ -275,6 +275,6 @@ const newGalleryFiles = [
 ];
 
 export const galleryImages = newGalleryFiles.map((filename) => ({
-  src: `/assets/gallery_webp/${encodeURIComponent(filename)}`,
+  src: `/assets/gallery_webp/${encodeURIComponent(filename.replace(/\.webp$/i, '.png'))}`,
   caption: filename.replace(/\.webp$/i, ''),
 }));
