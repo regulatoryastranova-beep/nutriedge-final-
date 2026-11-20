@@ -206,7 +206,6 @@ const newGalleryFiles = [
   'Vitamin D3 Drops Product Display.webp',
   'Weldbone Capsule Product Display (1).webp',
   'Weldbone Capsules Product Shot.webp',
-  'WhatsApp Image 2026-11-16 at 2.53.02 PM.webp',
   'Zincomax Supplement Box and Blister Pack.webp',
   'VitaGenix Selenium Supplement Display.webp',
   'ACC Q10 Forte Softgel Capsules.webp',
