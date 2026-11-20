@@ -232,7 +232,7 @@ const newGalleryFiles = [
  'Collagen Joint Supplement Packaging - Copy (2).webp',
  'COLLYNTRA Joint Care Product Display - Copy - Copy.webp',
   'Cranberry Sachet Product Display.webp',
-  'Cranol Plus Supplement Packaging Display.webp',
+ 'Cranol Plus Supplement Packaging Display - Copy.webp',
   'Crinis GOLD Product Display.webp',
   'C-Shine+ Effervescent Tablets Duo.webp',
   'CystoHOPE Urinary Health Packaging Display.webp',
