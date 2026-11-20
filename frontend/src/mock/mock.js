@@ -230,7 +230,7 @@ const newGalleryFiles = [
   'Cal-mivera Calcium Tablets Packaging.webp',
   'Canadian Lactis Probiotic Capsules.webp',
  'Collagen Joint Supplement Packaging - Copy (2).webp',
-  'COLLYNTRA Joint Care Product Display.webp',
+ 'COLLYNTRA Joint Care Product Display - Copy - Copy.webp',
   'Cranberry Sachet Product Display.webp',
   'Cranol Plus Supplement Packaging Display.webp',
   'Crinis GOLD Product Display.webp',
